@@ -20,6 +20,13 @@ namespace CarDealership.Controllers
       return View();
     }
 
+    [HttpPost("/cars")]
+    public ActionResult Create(string makemodel, int price, int miles)
+    {
+      Car myCar = new Car(makemodel, price, miles);
+      return RedirectToAction("Index");
+    }
+
 
   }
 }

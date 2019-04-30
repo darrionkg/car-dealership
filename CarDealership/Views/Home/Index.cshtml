@@ -1,8 +1,21 @@
-@* @using CarDealership.Models; *@
+@using CarDealership.Models;
 
-<h1>Car Dealership</h1>
+<h1>Top Quality Cars</h1>
 <ul>
-  <li>hello?</li>
-  @* <li>@Model.GetPrice()</li>
-  <li>@Model.GetMiles()</li> *@
+
+@if(Model.Count == 0)
+{
+  <p>No Cars :()</p>
+}
+@if(Model.Count != 0)
+{
+  @foreach (Car element in Model)
+  {
+    <li>@element.GetMakeModel()</li>
+    <li>@element.GetPrice()</li>
+    <li>@element.GetMiles()</li>
+  }
+}
+
 </ul>
+<a href="/cars/new">Add a new car!</a>

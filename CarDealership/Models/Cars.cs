@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace CarDealership.Models {
 
-  class Car
+  public class Car
   {
     private string MakeModel;
     private int Price;
